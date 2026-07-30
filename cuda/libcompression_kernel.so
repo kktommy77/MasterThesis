@@ -1,0 +1,22 @@
+#include <cuda_runtime.h> 
+
+#ifndef VECADD
+#define VECADD
+
+void CompressCuda(int32_t* data, uint8_t* c_data, int M, int byte_per_group);
+void DecompressCuda(int32_t* data, uint8_t* c_data, int M, int byte_per_group);
+void TruncCompressCuda(int32_t* data, uint8_t* c_data, int M, int byte_per_group);
+void TruncDecompressCuda(int32_t* data, uint8_t* c_data, int M, int byte_per_group);
+void FacetCompressCuda(int32_t* data, uint8_t* c_data, int M, int byte_per_group);
+void FacetDecompressCuda(int32_t* data, uint8_t* c_data, int M, int byte_per_group);
+void CompressMaskCuda(int32_t* data, uint8_t* mask, int M);
+void DecompressMaskCuda(int32_t* data, uint8_t* mask, int M);
+void CompressDropoutCuda(uint8_t* data, uint8_t* c_data, int M);
+void DecompressDropoutCuda(uint8_t* data, uint8_t* c_data, int M);
+void ProfileCuda(uint8_t* c_data, uint8_t* data, int32_t* budget, int32_t* budget1, int M, int byte_per_group);
+void FacetProfileCuda(uint8_t* c_data, uint8_t* data, int32_t* budget, int M, int byte_per_group);
+
+
+
+#endif
+
